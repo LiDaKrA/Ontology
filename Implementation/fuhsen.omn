@@ -1,0 +1,163 @@
+Prefix: : <http://iais.fraunhofer.de/ok/lidakra/fuhsen#>
+Prefix: omv: <http://omv.ontoware.org/2005/05/ontology#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: prov: <http://www.w3.org/ns/prov#>
+
+Ontology: <http://iais.fraunhofer.de/ok/lidakra/fuhsen#>
+
+Annotations: 
+	rdfs:comment "Vocabulary for FuhSen - Federated RDF-Based Hybrid Search Engine"@en,
+    rdfs:comment "Vokabular für FuhSen"@de,
+    omv:hasFormalityLevel <http://omv.ontoware.org/2005/05/ontology#Vocabulary>,
+    owl:versionInfo "0.1"
+
+AnnotationProperty: omv:hasFormalityLevel  
+AnnotationProperty: owl:versionInfo   
+AnnotationProperty: rdfs:label   
+AnnotationProperty: rdfs:comment
+    
+Datatype: xsd:string
+Datatype: xsd:date
+Datatype: rdf:PlainLiteral
+
+#Import: <http://www.w3.org/ns/prov#>
+
+#-------------------------------------------------------------
+# Provenance classes used in the ontology
+#-------------------------------------------------------------
+
+Class: prov:Entity
+	Annotations: 
+        rdfs:label "Entity"@en,
+		rdfs:label "Objekt"@de,
+		rdfs:comment "Abstract representation of an Entity to track its provenance"@en
+
+#Temporal solucion of prov design
+DataProperty: dataSource
+    Annotations: 
+        rdfs:label "Data Source"@en,
+        rdfs:label "Datenquelle"@de,   
+		rdfs:comment "Contains the name of the data source from where this entity was obtained"@en,
+		rdfs:comment "Name der Datenquelle, aus der der Datensatz stammt"@de
+    Domain: 
+        prov:Entity
+    Range:
+        xsd:string
+
+Class: prov:Activity
+	Annotations: 
+		rdfs:label "Activity"@en,
+        rdfs:label "Activität"@de,
+		rdfs:comment "Activity that produces the information tracked in the provenance"@en,
+		rdfs:comment "Todo"@de
+
+DataProperty: prov:startedAtTime
+    Annotations: 
+		rdfs:label "Started at time"@en,
+        rdfs:label "Startzeitpunkt"@de
+
+DataProperty: prov:endedAtTime
+    Annotations:
+		rdfs:label "Ended at time"@en,
+        rdfs:label "Endzeitpunkt"@de
+		
+#-------------------------------------------------------------
+# Agent is the base class for foaf:Person and org:Organization 
+#-------------------------------------------------------------
+
+Class: SearchableEntity
+	Annotations: 
+        rdfs:label "Searchable Entity"@en,
+        rdfs:label "Suchbares Objekt"@de,   
+		rdfs:comment "Abstract representation of an entity that can be found during a search process"@en,
+		rdfs:comment "Abstrakte Repräsentierung von Objekten, die während einer Suche gefunden werden können"@de
+	SubClassOf: 
+        prov:Entity
+
+DataProperty: title
+    Annotations: 
+        rdfs:label "Entity Title"@en,
+        rdfs:label "Todo"@de,   
+		rdfs:comment "Title of the entity, part of the entity summarization process"@en,
+		rdfs:comment "Todo"@de
+    Domain: 
+        SearchableEntity
+    Range:
+        xsd:string
+
+DataProperty: excerpt
+    Annotations: 
+        rdfs:label "Entity Excerpt"@en,
+        rdfs:label "Todo"@de,   
+		rdfs:comment "Excerpt of the entity, part of the entity summarization process"@en,
+		rdfs:comment "Todo"@de
+    Domain: 
+        SearchableEntity
+    Range:
+        xsd:string
+		
+#reuse img property from FOAF ontology here
+DataProperty: image
+    Annotations: 
+        rdfs:label "Entity Image"@en,
+        rdfs:label "Bild"@de,   
+		rdfs:comment "Image of the entity, part of the entity summarization process"@en,
+		rdfs:comment "Bild des Objekts, Teil der Objektbeschreibung"@de
+    Domain: 
+        SearchableEntity
+    Range:
+        xsd:string
+		
+Class: Search
+	Annotations: 
+        rdfs:label "Search"@en,
+        rdfs:label "Suchen"@de,   
+		rdfs:comment "Abstract representation of search process"@en,
+		rdfs:comment "Todo"@de
+	SubClassOf: 
+        prov:Activity
+
+DataProperty: uid
+    Annotations: 
+        rdfs:label "Unique Identifier"@en,
+        rdfs:label "Eindeutiger Identifikator"@de,   
+		rdfs:comment "A unique identifier should be generated for each search activity"@en,
+		rdfs:comment "Für jede Suchanfrage sollte ein eindeutiger Identifikator erstellt werden"@de
+    Domain: 
+        Search
+    Range:
+        xsd:string
+
+DataProperty: queryDate
+    Annotations: 
+        rdfs:label "Query Date"@en,
+        rdfs:label "Anfragezeitpunkt"@de,   
+		rdfs:comment "The query date and time is stored in this property"@en,
+		rdfs:comment "Datum und Uhrzeit, an denen die Suche startet"@de
+    Domain: 
+        Search
+    Range:
+        xsd:dateTime
+
+DataProperty: queryString
+    Annotations: 
+        rdfs:label "Query String"@en,
+        rdfs:label "Anfrage-String"@de,   
+		rdfs:comment "The query string is stored in this property"@en,
+		rdfs:comment "Todo"@de
+    Domain: 
+        Search
+    Range:
+        xsd:string
+		
+ObjectProperty: found
+    Annotations: 
+        rdfs:label "Found"@en,
+		rdfs:label "Fund"@de,
+		rdfs:comment "Relation between Search activity and the results it has found during the process."@en
+    Domain:
+		Search
+    Range: 
+        SearchableEntity

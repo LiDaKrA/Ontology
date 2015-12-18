@@ -1,0 +1,250 @@
+Prefix: : <http://iais.fraunhofer.de/ok/lidakra/crime_analysis#>
+Prefix: dc: <http://purl.org/dc/elements/1.1/>
+Prefix: omv: <http://omv.ontoware.org/2005/05/ontology#>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+Prefix: foaf: <http://xmlns.com/foaf/0.1/>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: skos: <http://www.w3.org/2004/02/skos/core#>
+
+Ontology: <http://iais.fraunhofer.de/ok/lidakra/crime_analysis#>
+
+Annotations: 
+    rdfs:comment "Vokabular für das Linked-Data-basierte Kriminalanalyse"@de,
+    omv:hasFormalityLevel <http://omv.ontoware.org/2005/05/ontology#Vocabulary>,
+    owl:versionInfo "0.1"
+
+AnnotationProperty: omv:hasFormalityLevel  
+AnnotationProperty: owl:versionInfo   
+AnnotationProperty: rdfs:label   
+AnnotationProperty: rdfs:comment
+    
+Datatype: xsd:string
+Datatype: xsd:date
+    
+Datatype: rdf:PlainLiteral
+
+Import: <http://iais.fraunhofer.de/ok/lidakra/common_entities#>
+
+Import: <http://xmlns.com/foaf/0.1/>
+# Import: <http://purl.org/dc/elements/1.1/>
+
+# CL@DC 2015-07-20: do we need our own?  Is reusing dc:creator not sufficient?  If we need sub-properties of dc:creator, I know the MARC Relators; maybe some of these are suitable for us.
+# DC@CL 2015-07-27: I am not really sure that creator is the concept in the crime investigation field. So I am reusing the concept but overwritting the label and comment
+ObjectProperty: dc:creator
+    Annotations: 
+        rdfs:comment "Represents the person or organization who has committed the crime"@en,
+        rdfs:label "has author"@en,
+        rdfs:label "hat Autor"@de   
+    Domain: 
+        CrimeCase
+    Range: 
+        foaf:Agent
+    
+ObjectProperty: isAssignedTo
+    Annotations: 
+        rdfs:label "ist zugewiesen"@de,
+        rdfs:comment "Represents the criminal prosecutor responsible to track and investigate the crime case"@en,
+        rdfs:label "is assigned to"@en   
+    Domain: 
+        CrimeCase
+    Range: 
+        Prosecutor
+        
+# CL@DC 2015-07-20: I would use W3C PROV instead, but we might have to extend it with some classes specific to crime investigation.
+# DC@CL 2015-07-20: Yes, but this needs more time and work to properly manage the PROV of the information. I will schedule for next iteration of the Ontology Definition
+ObjectProperty: hasSource
+    Annotations: 
+        rdfs:label "has source"@en,
+        rdfs:label "hat Quelle"@de,
+        rdfs:comment "Todo"@en
+    Domain: 
+        Evidence
+    Range: 
+        EvidenceSource
+        
+ObjectProperty: hasCase
+    Annotations: 
+        rdfs:label "has case"@en,
+        rdfs:comment "Todo"@en,
+        rdfs:label "hat Fall"@de
+    Domain: 
+        Crime
+    Range: 
+        CrimeCase
+    
+ObjectProperty: hasEvidence
+    Annotations: 
+        # CL@DC 2015-07-20: I don't know an appropriate German translation.
+        rdfs:label "has evidence"@en,
+        rdfs:label "hat Beweis"@de,
+		rdfs:comment "Relation linking a Case with the evidences collected during the investigation process."@en
+    Domain: 
+        CrimeCase
+    Range: 
+        Evidence
+    
+ObjectProperty: hasSuspect
+    Annotations: 
+        rdfs:label "has suspect"@en,
+        rdfs:label "hat Verdächtige(n)"@de,
+        rdfs:comment "Todo"@en   
+    Domain: 
+        CrimeCase
+    Range: 
+        foaf:Person
+           
+ObjectProperty: hasDenouncer
+    Annotations: 
+        rdfs:label "hat Ankläger"@de,
+        rdfs:comment "Todo"@en,
+        rdfs:label "has denouncer"@en
+    Domain: 
+        CrimeCase
+    Range: 
+       foaf:Person
+        
+# CL@DC 2015-07-20: What does this mean?  Are you sure the term is right?
+ObjectProperty: hasBaseLaw
+    Annotations: 
+        rdfs:label "has base law"@en,
+        rdfs:label "hat Gesetzesgrundlage"@de,
+        rdfs:comment "Todo"@en
+    Domain: 
+        Crime
+    Range: 
+        Law
+ 
+Class: Evidence
+    Annotations: 
+        rdfs:label "Evidence"@en,
+        rdfs:label "Beweis"@de,
+		rdfs:comment "Concept representing the evidence from a crime case."@en  
+    
+Class: ViolentCrime
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Violent Crime"@en,
+        rdfs:label "Gewaltverbrechen"@de
+    SubClassOf: 
+        Crime
+        
+Class: FraudOffence
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Fraud Offence"@en,
+        rdfs:label "Betrugsdelikt"@de
+    SubClassOf: 
+        Crime
+        
+Class: CopyrightOffence
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Offences against copyright legislation"@en,
+        rdfs:label "Urheberrechtsverletzungen"@de
+    SubClassOf: 
+        Crime
+    
+# CL@DC 2015-07-20: What do you mean by this?
+# DC@CL 2015-07-22: This is like a code for the type of crime, I found in the BKA - Police Crime Statistics Category 'Fraud' has code 500000 and crime 'obtaining motor vehicles by fraud' has code 511100
+# CL@DC 2015-07-23: Oh, I see – then skos:notation would be a suitable property for reuse.  Speaking of SKOS, SKOS might actually be the right choice for translating this BKA category scheme.  With SKOS you can model hierarchies that have a weaker semantics than the subclass/superclass hierarchy of ontologies.
+DataProperty: keyNumber
+    Annotations: 
+        rdfs:label "Key Number"@en    
+    Domain: 
+        Crime
+    Range: 
+        xsd:string	
+
+Class: TheftOffence
+    Annotations: 
+        rdfs:label "Theft Offence"@en,
+        rdfs:label "Diebstahl"@de,
+        rdfs:comment "Todo"@en
+    SubClassOf: 
+        Crime
+   
+Class: CorruptionOffence
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Corruption Offence"@en,
+        rdfs:label "Korruptionsdelikt"@de
+    SubClassOf: 
+        Crime
+
+# CL@DC 2015-07-20: I would use W3C PROV instead, but we might have to extend it with some classes specific to crime investigation.
+Class: EvidenceSource
+    Annotations: 
+        rdfs:label "Evidence Source"@en,
+        rdfs:label "Beweisquelle"@de,
+		rdfs:comment "Entity to track the provenance of this evidence."@en
+    
+Class: CrimeCase
+    Annotations: 
+        rdfs:label "Kriminalfall"@de,
+        rdfs:label "Crime case"@en,
+        rdfs:comment "Todo"@en   
+
+DataProperty: city
+    Annotations: 
+        rdfs:label "City"@en,
+		rdfs:label "Stadt"@de
+    Domain: 
+        CrimeCase
+    Range: 
+        xsd:string
+		
+Class: Witness
+    Annotations: 
+        rdfs:label "Witness"@en,
+		rdfs:label "Zeuge"@de,
+		rdfs:comment "Todo"@en
+    SubClassOf: 
+        foaf:Person
+    
+Class: Suspect
+    Annotations: 
+        rdfs:label "Suspect"@en,
+		rdfs:label "Verdächtiger"@de,
+		rdfs:comment "Todo"@en
+    SubClassOf:
+        foaf:Agent
+    
+Class: DrugOffence
+    Annotations: 
+        rdfs:label "Drug Offence"@en,
+		rdfs:label "Drogendelikt"@de,
+		rdfs:comment "Todo"@en
+    SubClassOf: 
+        Crime
+    
+Class: Crime
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Crime"@en,
+        rdfs:label "Verbrechen"@de
+    
+Class: Prosecutor
+    Annotations: 
+        rdfs:label "Prosecutor"@en,
+        rdfs:label "Ankläger"@de,
+		rdfs:comment "Todo"@en		
+    SubClassOf: 
+        foaf:Person
+    
+Class: Law
+    Annotations: 
+        rdfs:comment "Todo"@en,
+        rdfs:label "Law"@en,
+        rdfs:label "Gesetz"@en
+    
+Class: Victim
+    Annotations: 
+        rdfs:label "Victim"@en,		
+        rdfs:label "Geschädigter"@de,
+		rdfs:comment "Todo"@en				
+    SubClassOf: 
+        foaf:Agent
+ 
