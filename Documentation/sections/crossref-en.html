@@ -1,0 +1,371 @@
+<h2>4. Cross reference for  classes, properties and dataproperties</h2>
+This section provides details for each class and property defined by .
+<div id="classes">
+   <h2>Classes</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entity</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+            title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://www.w3.org/ns/prov#Activity">
+      <h3>Activity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Activity</p>
+      <div class="comment">
+         <p>Activity that produces the information tracked in the provenance</p>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#Entity">
+      <h3>Entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#Entity</p>
+      <div class="comment">
+         <p>Abstract representation of an Entity to track its provenance</p>
+      </div>
+      <dl class="description">
+         <dt>has sub-classes</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+               title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource">Data Source</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">
+      <h3>Search<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#Search</p>
+      <div class="comment">
+         <p>Abstract representation of search process</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Activity" title="http://www.w3.org/ns/prov#Activity">Activity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#found" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#found">Found</a>
+            <sup class="type-op" title="object property">op</sup>, <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate">Query Date</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString"
+               title="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString">Query String</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#uid" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#uid">Unique Identifier</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+      </dl>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">
+      <h3>Searchable Entity<sup class="type-c" title="class">c</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#classes">Class ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity</p>
+      <div class="comment">
+         <p>Abstract representation of an entity that can be found during a search process</p>
+      </div>
+      <dl class="description">
+         <dt>has super-classes</dt>
+         <dd>
+            <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entity</a>
+            <sup class="type-c" title="class">c</sup>
+         </dd>
+         <dt>is in domain of</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt">Entity Excerpt</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#image" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#image">Entity Image</a>
+            <sup class="type-dp" title="data property">dp</sup>, <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#title" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#title">Entity Title</a>
+            <sup class="type-dp" title="data property">dp</sup>
+         </dd>
+         <dt>is in range of</dt>
+         <dd>
+            <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#found" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#found">Found</a>
+            <sup class="type-op" title="object property">op</sup>
+         </dd>
+      </dl>
+   </div>
+</div><div id="objectproperties">
+   <h2>Object Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#found" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#found">Found</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#found">
+      <h3>Found<sup class="type-op" title="object property">op</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#objectproperties">Object Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#found</p>
+      <div class="comment">
+         <p>Relation between Search activity and the results it has found during the process.</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+                  title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div><div id="dataproperties">
+   <h2>Data Properties</h2>
+   <ul class="hlist">
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource">Data Source</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#endedAtTime" title="http://www.w3.org/ns/prov#endedAtTime">Ended at time</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt">Entity Excerpt</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#image" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#image">Entity Image</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#title" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#title">Entity Title</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate">Query Date</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString"
+            title="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString">Query String</a>
+      </li>
+      <li>
+         <a href="#http://www.w3.org/ns/prov#startedAtTime" title="http://www.w3.org/ns/prov#startedAtTime">Started at time</a>
+      </li>
+      <li>
+         <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#uid" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#uid">Unique Identifier</a>
+      </li>
+   </ul>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource">
+      <h3>Data Source<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource</p>
+      <div class="comment">
+         <p>Contains the name of the data source from where this entity was obtained</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://www.w3.org/ns/prov#Entity" title="http://www.w3.org/ns/prov#Entity">Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#endedAtTime">
+      <h3>Ended at time<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#endedAtTime</p>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt">
+      <h3>Entity Excerpt<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt</p>
+      <div class="comment">
+         <p>Excerpt of the entity, part of the entity summarization process</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+                  title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#image">
+      <h3>Entity Image<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#image</p>
+      <div class="comment">
+         <p>Image of the entity, part of the entity summarization process</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+                  title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#title">
+      <h3>Entity Title<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#title</p>
+      <div class="comment">
+         <p>Title of the entity, part of the entity summarization process</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity"
+                  title="http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity">Searchable Entity</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate">
+      <h3>Query Date<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate</p>
+      <div class="comment">
+         <p>The query date and time is stored in this property</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#dateTime">date time</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString">
+      <h3>Query String<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString</p>
+      <div class="comment">
+         <p>The query string is stored in this property</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+   <div class="entity" id="http://www.w3.org/ns/prov#startedAtTime">
+      <h3>Started at time<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://www.w3.org/ns/prov#startedAtTime</p>
+   </div>
+   <div class="entity" id="http://vocab.cs.uni-bonn.de/eis/fuhsen#uid">
+      <h3>Unique Identifier<sup class="type-dp" title="data property">dp</sup>
+         <span class="backlink"> back to <a href="#toc">ToC</a> or <a href="#dataproperties">Data Property ToC</a>
+         </span>
+      </h3>
+      <p>
+         <strong>IRI:</strong> http://vocab.cs.uni-bonn.de/eis/fuhsen#uid</p>
+      <div class="comment">
+         <p>A unique identifier should be generated for each search activity</p>
+      </div>
+      <div class="description">
+         <dl>
+            <dt>has domain</dt>
+            <dd>
+               <a href="#http://vocab.cs.uni-bonn.de/eis/fuhsen#Search" title="http://vocab.cs.uni-bonn.de/eis/fuhsen#Search">Search</a>
+               <sup class="type-c" title="class">c</sup>
+            </dd>
+            <dt>has range</dt>
+            <dd>
+               <span class="dotted" title="http://www.w3.org/2001/XMLSchema#string">string</span>
+            </dd>
+         </dl>
+      </div>
+   </div>
+</div>
