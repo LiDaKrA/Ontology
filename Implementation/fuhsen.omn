@@ -1,11 +1,11 @@
-Prefix: : <http://iais.fraunhofer.de/ok/lidakra/fuhsen#>
+Prefix: : <http://vocab.cs.uni-bonn.de/eis/fuhsen#>
 Prefix: omv: <http://omv.ontoware.org/2005/05/ontology#>
 Prefix: owl: <http://www.w3.org/2002/07/owl#>
 Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 Prefix: prov: <http://www.w3.org/ns/prov#>
 
-Ontology: <http://iais.fraunhofer.de/ok/lidakra/fuhsen#>
+Ontology: <http://vocab.cs.uni-bonn.de/eis/fuhsen#>
 
 Annotations: 
 	rdfs:comment "Vocabulary for FuhSen - Federated RDF-Based Hybrid Search Engine"@en,
