@@ -20,14 +20,26 @@ function loadHash() {
     </script> 
   </head> 
 
-<body resource="" typeOf="owl:Ontology schema:TechArticle">
+<body resource="http://vocab.cs.uni-bonn.de/eis/fuhsen#" typeOf="owl:Ontology schema:TechArticle">
 <span resource="" typeOf="foaf:Document schema:WebPage">
-<span property="dc:contributor prov:wasAttributedTo schema:contributor" resource="http://purl.org/net/dgarijo"></span>
+<span property="dc:created schema:dateCreated" content="Release date: 1 April 2016"></span>
 </span>
-<div class="container"><div class="head">
+<div class="container">
+<div class="head">
 <div style="float:right">language <a href="index-en.html"><b>en</b></a> </div>
-<dl>This work is licensed under a license: <a rel="license" href="http://insertlicenseURIhere.org">license name goes here</a>.</dl>
-<span property="dc:license" resource="http://insertlicenseURIhere.org"></span>
+<h1 property="dc:title schema:name">The FuhSen Vocabulary</h1>
+<span property="dc:modified schema:dateModified" content="Release date: 1 April 2016"></span>
+<h2>Release  Release date: 1 April 2016</h2>
+<dl>
+<dt>This version:</dt>
+<dd><a href="http://vocab.cs.uni-bonn.de/eis/fuhsen#">http://vocab.cs.uni-bonn.de/eis/fuhsen#</a></dd>
+</dl><dt>Revision:</dt>
+<dd property="schema:version">1.0</dd>
+<a property="dc:rights" href="http://creativecommons.org/licenses/by-nc-sa/2.0/" rel="license">
+<img src="http://i.creativecommons.org/l/by-nc-sa/2.0/88x31.png" style="border-width:0" alt="License"></img>
+</a>
+<br/><dl>This work is licensed under a license: <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/2.0/">License name. E.g.: Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic License</a>.</dl>
+<span property="dc:license" resource="http://creativecommons.org/licenses/by-nc-sa/2.0/"></span>
 <dl><a href="provenance/provenance-en.html">Click here</a> to see the provenance of this page.</dl><hr/>
 </div>
      <div id="abstract"></div>
@@ -42,9 +54,7 @@ function loadHash() {
 <li><a href="#classes">4.1 Classes</a></li>
 <li><a href="#objectproperties">4.2 Object Properties</a></li>
         <li><a href="#dataproperties">4.3 Data Properties</a></li>
-        <li><a href="#namedindividuals">4.4 Named Individuals</a></li>
 </ul>
-<li><a href="#references">5. References</a></li>
 <li><a href="#acknowledgements">6. Acknowledgements</a></li>
 </ul>
 </div>
@@ -52,7 +62,7 @@ function loadHash() {
      <div id="overview"></div>
      <div id="description"></div>
      <div id="crossref"></div>
-     <div id="references"></div>
+<!--     <div id="references"></div> -->
 <div id="acknowledgements">
 <h2>6. Acknowledgements <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
 <p>The authors would like to thank <a href="http://www.essepuntato.it/">Silvio Peroni</a> for developing <a href="http://www.essepuntato.it/lode">LODE</a>, a Live OWL Documentation Environment, which is used for representing the Cross Referencing Section of this document and <a href="http://purl.org/net/dgarijo/">Daniel Garijo</a> for developing <a href="https://github.com/dgarijo/Widoco">Widoco</a>, the program used to create the document template used in this documentation.</p>
