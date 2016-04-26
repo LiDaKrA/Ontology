@@ -1,4 +1,4 @@
-@prefix : <http://vocab.cs.uni-bonn.de/eis/fuhsen#> .
+@prefix : <http://w3id.org/eis/vocabs/fuhsen#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 @prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -9,7 +9,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://vocab.cs.uni-bonn.de/eis/fuhsen#> .
 
-<http://vocab.cs.uni-bonn.de/eis/fuhsen#> rdf:type owl:Ontology ;
+<http://w3id.org/eis/vocabs/fuhsen#> rdf:type owl:Ontology ;
                                           
                                           owl:versionInfo "0.1" ;
                                           
