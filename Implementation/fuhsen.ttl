@@ -1,0 +1,305 @@
+@prefix : <http://vocab.cs.uni-bonn.de/eis/fuhsen#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix omv: <http://omv.ontoware.org/2005/05/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://vocab.cs.uni-bonn.de/eis/fuhsen#> .
+
+<http://vocab.cs.uni-bonn.de/eis/fuhsen#> rdf:type owl:Ontology ;
+                                          
+                                          owl:versionInfo "0.1" ;
+                                          
+                                          rdfs:comment "Vokabular für FuhSen"@de ,
+                                                       "Vocabulary for FuhSen - Federated RDF-Based Hybrid Search Engine"@en ;
+                                          
+                                          omv:hasFormalityLevel omv:Vocabulary .
+
+
+#################################################################
+#
+#    Annotation properties
+#
+#################################################################
+
+
+###  http://omv.ontoware.org/2005/05/ontology#hasFormalityLevel
+
+omv:hasFormalityLevel rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2000/01/rdf-schema#comment
+
+rdfs:comment rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+
+###  http://www.w3.org/2002/07/owl#versionInfo
+
+owl:versionInfo rdf:type owl:AnnotationProperty .
+
+
+
+
+
+#################################################################
+#
+#    Datatypes
+#
+#################################################################
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#PlainLiteral
+
+rdf:PlainLiteral rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#date
+
+xsd:date rdf:type rdfs:Datatype .
+
+
+
+###  http://www.w3.org/2001/XMLSchema#string
+
+xsd:string rdf:type rdfs:Datatype .
+
+
+
+
+
+#################################################################
+#
+#    Object Properties
+#
+#################################################################
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#found
+
+:found rdf:type owl:ObjectProperty ;
+       
+       rdfs:label "Fund"@de ,
+                  "Found"@en ;
+       
+       rdfs:comment "Relation between Search activity and the results it has found during the process."@en ;
+       
+       rdfs:domain :Search ;
+       
+       rdfs:range :SearchableEntity .
+
+
+
+
+
+#################################################################
+#
+#    Data properties
+#
+#################################################################
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#dataSource
+
+:dataSource rdf:type owl:DatatypeProperty ;
+            
+            rdfs:label "Datenquelle"@de ,
+                       "Data Source"@en ;
+            
+            rdfs:comment "Name der Datenquelle, aus der der Datensatz stammt"@de ,
+                         "Contains the name of the data source from where this entity was obtained"@en ;
+            
+            rdfs:range xsd:string ;
+            
+            rdfs:domain prov:Entity .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#excerpt
+
+:excerpt rdf:type owl:DatatypeProperty ;
+         
+         rdfs:label "Todo"@de ,
+                    "Entity Excerpt"@en ;
+         
+         rdfs:comment "Todo"@de ,
+                      "Excerpt of the entity, part of the entity summarization process"@en ;
+         
+         rdfs:domain :SearchableEntity ;
+         
+         rdfs:range xsd:string .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#image
+
+:image rdf:type owl:DatatypeProperty ;
+       
+       rdfs:label "Bild"@de ,
+                  "Entity Image"@en ;
+       
+       rdfs:comment "Bild des Objekts, Teil der Objektbeschreibung"@de ,
+                    "Image of the entity, part of the entity summarization process"@en ;
+       
+       rdfs:domain :SearchableEntity ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#queryDate
+
+:queryDate rdf:type owl:DatatypeProperty ;
+           
+           rdfs:label "Anfragezeitpunkt"@de ,
+                      "Query Date"@en ;
+           
+           rdfs:comment "Datum und Uhrzeit, an denen die Suche startet"@de ,
+                        "The query date and time is stored in this property"@en ;
+           
+           rdfs:domain :Search ;
+           
+           rdfs:range xsd:dateTime .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#queryString
+
+:queryString rdf:type owl:DatatypeProperty ;
+             
+             rdfs:label "Anfrage-String"@de ,
+                        "Query String"@en ;
+             
+             rdfs:comment "Todo"@de ,
+                          "The query string is stored in this property"@en ;
+             
+             rdfs:domain :Search ;
+             
+             rdfs:range xsd:string .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#title
+
+:title rdf:type owl:DatatypeProperty ;
+       
+       rdfs:label "Todo"@de ,
+                  "Entity Title"@en ;
+       
+       rdfs:comment "Todo"@de ,
+                    "Title of the entity, part of the entity summarization process"@en ;
+       
+       rdfs:domain :SearchableEntity ;
+       
+       rdfs:range xsd:string .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#uid
+
+:uid rdf:type owl:DatatypeProperty ;
+     
+     rdfs:label "Eindeutiger Identifikator"@de ,
+                "Unique Identifier"@en ;
+     
+     rdfs:comment "Für jede Suchanfrage sollte ein eindeutiger Identifikator erstellt werden"@de ,
+                  "A unique identifier should be generated for each search activity"@en ;
+     
+     rdfs:domain :Search ;
+     
+     rdfs:range xsd:string .
+
+
+
+###  http://www.w3.org/ns/prov#endedAtTime
+
+prov:endedAtTime rdf:type owl:DatatypeProperty ;
+                 
+                 rdfs:label "Endzeitpunkt"@de ,
+                            "Ended at time"@en .
+
+
+
+###  http://www.w3.org/ns/prov#startedAtTime
+
+prov:startedAtTime rdf:type owl:DatatypeProperty ;
+                   
+                   rdfs:label "Startzeitpunkt"@de ,
+                              "Started at time"@en .
+
+
+
+
+
+#################################################################
+#
+#    Classes
+#
+#################################################################
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#Search
+
+:Search rdf:type owl:Class ;
+        
+        rdfs:label "Suchen"@de ,
+                   "Search"@en ;
+        
+        rdfs:subClassOf prov:Activity ;
+        
+        rdfs:comment "Todo"@de ,
+                     "Abstract representation of search process"@en .
+
+
+
+###  http://vocab.cs.uni-bonn.de/eis/fuhsen#SearchableEntity
+
+:SearchableEntity rdf:type owl:Class ;
+                  
+                  rdfs:label "Suchbares Objekt"@de ,
+                             "Searchable Entity"@en ;
+                  
+                  rdfs:subClassOf prov:Entity ;
+                  
+                  rdfs:comment "Abstrakte Repräsentierung von Objekten, die während einer Suche gefunden werden können"@de ,
+                               "Abstract representation of an entity that can be found during a search process"@en .
+
+
+
+###  http://www.w3.org/ns/prov#Activity
+
+prov:Activity rdf:type owl:Class ;
+              
+              rdfs:label "Activität"@de ,
+                         "Activity"@en ;
+              
+              rdfs:comment "Todo"@de ,
+                           "Activity that produces the information tracked in the provenance"@en .
+
+
+
+###  http://www.w3.org/ns/prov#Entity
+
+prov:Entity rdf:type owl:Class ;
+            
+            rdfs:label "Objekt"@de ,
+                       "Entity"@en ;
+            
+            rdfs:comment "Abstract representation of an Entity to track its provenance"@en .
+
+
+
+
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
+
