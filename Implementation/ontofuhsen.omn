@@ -156,7 +156,7 @@ ObjectProperty: found
     Annotations: 
         rdfs:label "Found"@en,
 		rdfs:label "Fund"@de,
-		rdfs:comment "Relation between Search activity and the results it has found during the process."@en
+		rdfs:comment "Relation between Search activity and the results it has found during the process"@en
     Domain:
 		Search
     Range: 
@@ -181,7 +181,7 @@ Class: InformationSource
 ObjectProperty: hasAPI
     Annotations: 
         rdfs:label "has API"@en,
-		rdfs:comment "Relates the Information Source with the Web Api."@en
+		rdfs:comment "Relates the Information Source with the Web API."@en
     Domain:
 		InformationSource
     Range: 
@@ -213,7 +213,7 @@ Class: Operation
 ObjectProperty: hasOperation
     Annotations: 
         rdfs:label "has Operation"@en,
-		rdfs:comment "Relates the Operations that can be performed with a Web Api."@en
+		rdfs:comment "Relates the Operations that can be performed with a Web API"@en
     Domain:
 		Operation
     Range: 
@@ -275,4 +275,16 @@ ObjectProperty: hasParameter
     Domain:
 		Parameter
     Range: 
-        Request				
+        Request		
+		
+ObjectProperty: finds
+    Annotations: 
+        rdfs:label "Finds"@en,
+		rdfs:comment "Relates the Search concepts with the rdfs:Resource. Representing that in the range it can be connected with any Resource"@en
+    Domain:
+		SearchOperation
+		
+ObjectProperty: contains
+    Annotations: 
+        rdfs:label "Contains"@en,
+		rdfs:comment "Relates the Response concept with properties that included in the Response of the Search operation"@en
