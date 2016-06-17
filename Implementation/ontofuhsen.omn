@@ -161,3 +161,118 @@ ObjectProperty: found
 		Search
     Range: 
         SearchableEntity
+		
+Class: WebApi
+	Annotations: 
+        rdfs:label "Web Api"@en,
+		rdfs:comment "Web Service provided for the DataSource to deliver its information to the Information sources"@en
+		
+Class: Rest
+	Annotations: 
+        rdfs:label "Rest"@en,
+		rdfs:comment "Rest Web Service"@en		
+	SubClassOf: WebApi
+	
+Class: InformationSource
+	Annotations: 
+        rdfs:label "Information Source"@en,
+		rdfs:comment "Represents a Data Source from which the Information is being requested, e.g., FB, TW, G+"@en		
+		
+ObjectProperty: hasAPI
+    Annotations: 
+        rdfs:label "has API"@en,
+		rdfs:comment "Relates the Information Source with the Web Api."@en
+    Domain:
+		InformationSource
+    Range: 
+        WebApi
+
+Class: SocialPlatform
+	Annotations: 
+        rdfs:label "Social Platform"@en,
+		rdfs:comment "Social Platform"@en		
+	SubClassOf: InformationSource	
+	
+Class: ECommercePlatform
+	Annotations: 
+        rdfs:label "ECommerce Platform"@en,
+		rdfs:comment "ECommerce Platform"@en		
+	SubClassOf: InformationSource
+	
+Class: OpenData
+	Annotations: 
+        rdfs:label "Open Data"@en,
+		rdfs:comment "Open Data"@en		
+	SubClassOf: InformationSource	
+
+Class: Operation
+	Annotations: 
+        rdfs:label "Operation"@en,
+		rdfs:comment "Operation"@en		
+	
+ObjectProperty: hasOperation
+    Annotations: 
+        rdfs:label "has Operation"@en,
+		rdfs:comment "Relates the Operations that can be performed with a Web Api."@en
+    Domain:
+		Operation
+    Range: 
+        WebApi	
+		
+DataProperty: path
+    Annotations: 
+        rdfs:label "Path"@en,
+		rdfs:comment "Path"@en,
+		rdfs:comment "Todo"@de
+    Domain: 
+        Operation
+    Range:
+        xsd:string	
+
+Class: SearchOperation
+	Annotations: 
+        rdfs:label "SearchOperation"@en,
+		rdfs:comment "SearchOperation"@en	
+    SubClassOf Operation
+	
+Class: Request
+	Annotations: 
+        rdfs:label "Request"@en,
+		rdfs:comment "Request"@en
+		
+Class: Response
+	Annotations: 
+        rdfs:label "Response"@en,
+		rdfs:comment "Response"@en
+
+ObjectProperty: sends
+    Annotations: 
+        rdfs:label "Sends"@en,
+		rdfs:comment "Points to the Send concept from a given Operation"@en
+    Domain:
+		Operation
+    Range: 
+        Request		
+		
+ObjectProperty: receives
+    Annotations: 
+        rdfs:label "Sends"@en,
+		rdfs:comment "Points to the Response concept from a given Operation"@en
+    Domain:
+		Operation
+    Range: 
+        Response		
+		
+Class: Parameter
+	Annotations: 
+        rdfs:label "Parameter"@en,
+		rdfs:comment "Parameter"@en		
+		
+ObjectProperty: hasParameter
+    Annotations: 
+        rdfs:label "has Parameter"@en,
+		rdfs:comment "Points to Parameter from a Request"@en
+    Domain:
+		Parameter
+    Range: 
+        Request				
