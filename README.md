@@ -14,6 +14,6 @@ fs:Search, fs:SearchableEntity).
 2. Data sources metadata: contains classes describing data sources API services and access points (e.g., fs:API, fs:Parameter, fs:Operation). These classes model the APIs and services from which the data is extracted (e.g., Facebook or Twitter).
 3. Domain specific metadata: includes classes for describing the results collected from FuhSen during keyword query processing. For the crime domain concepts include: gr:ProductOrService and org:Organization.
 
-![OntoFuhSen overview image](https://cloud.githubusercontent.com/assets/4923203/15324039/bd4efac4-1c12-11e6-9410-884da5c9236e.png)
+![OntoFuhSen overview image](https://cloud.githubusercontent.com/assets/4923203/18556324/2cc80c8a-7b39-11e6-812d-29b8b7c2b544.png)
 
 
